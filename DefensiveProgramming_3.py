@@ -114,14 +114,20 @@ test_range_overlap()
 test_range_overlap_one_range()
 test_range_overlap_no_overlap()
 
+# If programme is being run from command line run this, if not don't bother
+#     __name__ tells you what file you're in
 
-import sys  # Functions that interact with computer
+# If you import a module and then do <module>.__name__ this will return the 
+#   file name minus the .py
 
-start=float(sys.argv[1])
-end=float(sys.argv[2])
-
-print range_overlap([(start, end)])
-
+if __name__ =="__main__":
+    import sys  # Functions that interact with computer
+    
+    start=float(sys.argv[1])
+    end=float(sys.argv[2])
+    
+    print range_overlap([(start, end)])
+    
 
 
 
